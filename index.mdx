@@ -1,5 +1,5 @@
 ---
-title: "Designing and developing User Interfaces in 2024"
+title: "Designing and developing User Interfaces in 2025"
 # Incude global styles here
 style: >
   body {
@@ -390,7 +390,7 @@ style: >
 # Include footer content here or remove it
 footer: >
   <footer class="badge">
-      <a href="https://github.com/varya/design-and-develop-ui-2024" target="_blank" rel="noopener">Fork me on GitHub</a>
+      <a href="https://github.com/varya/design-and-develop-ui-2025" target="_blank" rel="noopener">Fork me on GitHub</a>
   </footer>
 # Include data for generating meta tags
 meta:
@@ -398,7 +398,7 @@ meta:
     Design Systems Overview
   cover: ./pictures/cover.jpg
   author: Varya Stepanova
-  website: https://varya.me/design-and-develop-ui-2024/
+  website: https://varya.me/design-and-develop-ui-2025/
   twitter: varya_en
 ---
 
@@ -412,7 +412,7 @@ meta:
 
 <div className="gap"></div>
 
-[Varya Stepanova](https://varya.me) @ Aalto University, 2024
+[Varya Stepanova](https://varya.me) @ Aalto University, 2025
 
 <style>{`
   #cover {
@@ -454,7 +454,7 @@ meta:
 `}</style>
 
 <!--
-Welcome, everyone! Today we're going to talk about designing and developing user interfaces in 2024. This lecture will help you understand the challenges of building large-scale projects and introduce you to the concept of design systems.
+Welcome, everyone! Today we're going to talk about designing and developing user interfaces in 2025. This lecture will help you understand the challenges of building large-scale projects and introduce you to the concept of design systems.
 -->
 
 
@@ -469,11 +469,11 @@ Welcome, everyone! Today we're going to talk about designing and developing user
 
 #### Contacts
 <div className="contacts">
+  <span className="bridge"></span><a href="https://bridge-the-gap.dev/">Bridge-the-Gap.dev</a>
+  <br/>
   <span className="linkedin"></span><a href="https://www.linkedin.com/in/varyastepanova/">linkedin.com/in/varyastepanova</a>
   <br/>
   <span className="globe"></span><a href="http://varya.me">varya.me</a>
-  <br/>
-  <span className="twitter"></span><a href="https://twitter.com/varya_en">@varya_en</a>
 </div>
 
 
@@ -504,14 +504,16 @@ Welcome, everyone! Today we're going to talk about designing and developing user
   font-size: 0.8em;
 }
 
-.about-me .twitter
+.about-me .bridge
 {
   content: "";
   display: inline-block;
   width: 1.5em;
   height: 1.5em;
-  background-image:url(pictures/twitter-logo.png);
+  background-image:url(pictures/bridge-logo.png);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   margin-right: 0.5em;
   margin-bottom: -0.25em;
 }
@@ -1137,25 +1139,38 @@ CSS Modules make it easier to write maintainable CSS in large projects by keepin
 ## CSS-in-JS: Dynamic Styling
 { .numbered-list .title-08 }
 
-- ### Styled-components
-  Allows you to write CSS directly within JavaScript.
+- ### ~~Styled-components~~
+  ~~Allows you to write CSS directly within JavaScript.~~
 - ### Emotion
   Supports for both string and object styles.
 - ### JSS
   CSS as JavaScript objects, commonly used with React.
-- ### Stitches
-  Near-zero runtime, lightweight, focus on architecture.
+- ### ~~Stitches~~
+  ~~Near-zero runtime, lightweight, focus on architecture.~~
 
 <!--
 CSS-in-JS is another approach to styling components. Here are some popular tools:
 
-1. Styled-components: Let you write CSS directly in your JavaScript.
+1. Styled-components: Let you write CSS directly in your JavaScript. Now in maintenance mode. No new features but bugs are fixed.
 2. Emotion: Supports both string and object styles.
 3. JSS: Defines CSS as JavaScript objects, often used with React.
 4. Stitches: Focuses on performance and architecture.
 
 These tools bring CSS closer to your component logic, making it easier to create dynamic, scoped styles.
 -->
+
+
+## Utility-first CSS
+{ .numbered-list .title-08 }
+
+- ### Tailwind
+  Predefined CSS classes and themable configuration
+- ### UnoCSS
+  Instant on-demand atomic CSS engine: [unocss.dev](https://unocss.dev/)
+
+  ```
+  <Button border-radius="md" border-color="info-dark" />
+  ```
 
 
 ## From technology to a system
@@ -2040,6 +2055,114 @@ The second topic is the balance between configuration and customization, the bes
 
 -->
 
+## Design systems and AI
+{ .slide--shout .slide--highlighted }
+
+## Design systems and AI
+{ .slide--3-columns .title-08 .text-08 }
+
+### Structured AI-Agent Friendly Architecture
+
+Design systems are AI-friendly, thanks to their structured nature. An AI agent can introduce new tokens and
+create new components and patterns "by analogy".
+
+### Automations and Rapid Development
+
+AI-powered automation make development cycles faster. From generating component variants to automated testing and documentation updates.
+
+### Custom MCP (Model Context Protocol)
+
+**AI agents** can interact with a design system through custom MCPs.
+This ensures correct usage of design systems and coherent UX across brand portfolio.
+
+## Custom MCP for Design Systems
+{ .slide--shout .slide--primary }
+
+## The Problem: Uncontrolled AI Generation
+{ .numbered-list .title-08 }
+
+- ### AI Agents Are Everywhere
+  Developers increasingly use AI to generate code quickly and easily.
+- ### Custom Solutions Proliferate  
+  Without guidance, AI creates ad-hoc solutions using Tailwind, custom CSS, etc.
+- ### Brand Coherence Breaks Down
+  Over time, inconsistent implementations fragment the user experience.
+- ### Design System Adoption Drops
+  Teams bypass established patterns in favor of AI-generated shortcuts.
+
+<!--
+The widespread adoption of AI coding assistants creates a new challenge for design systems. While AI makes development faster, it can also lead to inconsistent implementations that bypass established design patterns. Without proper guidance, AI agents tend to create custom solutions rather than using existing design system components.
+-->
+
+## The Solution: Taming AI with MCP Server
+{ .mcp-solution .title-08 }
+
+
+** Model Context Protocol (MCP) Server** is
+a dedicated server that provides AI agents with structured access to your design system, ensuring consistent component usage and brand adherence.
+
+<!--
+The solution is to implement a Model Context Protocol (MCP) server specifically for your design system. This server acts as a bridge between AI agents and your design system, providing structured guidance on component usage, design tokens, and implementation patterns.
+-->
+
+## MCP Schema
+{ .no-title .mcp-schema }
+
+<Cover src="pictures/mcp-schema.png" alt=""/>
+
+##### Credits: Pierre Bremell, https://medium.com/design-bootcamp/how-to-build-an-ai-design-system-6d80d7aa200d
+{ .credits }
+
+<style>{`
+.mcp-schema .cover {
+  margin-top: -50px;
+}
+.mcp-schema .credits {
+  font-size: 60%;
+  position: absolute;
+  bottom: 25px;
+}
+`}</style>
+
+## Infrastructure Requirements
+{ .block-list .infrastructure .title-08 }
+
+- ### Multi-Model Testing
+  Test MCP compatibility across different AI models (Claude, GPT, Gemini).
+- ### Component Registry
+  Maintain up-to-date catalog of available components and their APIs.
+- ### Usage Analytics
+  Monitor which components are requested and how they're being used.
+- ### Continuous Updates
+  Keep MCP server synchronized with design system changes.
+
+<style>{`
+.infrastructure ul li {
+  background-color: #f8f9fa;
+  border-left: 4px solid #75d3d1;
+  padding: 15px 15px 10px 20px;
+  margin-bottom: 15px;
+  border-radius: 0 8px 8px 0;
+}
+
+.infrastructure h3 {
+  color: #ca4e1f;
+  margin-bottom: 0.25em;
+}
+`}</style>
+
+<!--
+Implementing an MCP server for design systems requires significant infrastructure:
+
+1. Multi-Model Testing: Different AI models may interpret MCP responses differently, requiring thorough testing.
+2. Component Registry: A real-time catalog of all available components with their current APIs and usage guidelines.
+3. Usage Analytics: Understanding how AI agents are using your design system helps improve the MCP server.
+4. Continuous Updates: The MCP server must stay synchronized with design system evolution.
+
+This infrastructure investment is crucial for maintaining brand coherence in an AI-driven development environment.
+-->
+
+
 ## Future Trends in Design Systems
 { .slide--shout .slide--highlighted }
 
@@ -2072,7 +2195,7 @@ These trends will make design systems more powerful and easier to use, further i
 
 <img src="pictures/selfie.jpg" class="photo" />
 
-#### [Slides: varya.me/design-and-develop-ui-2024/](https://varya.me/design-and-develop-ui-2024/)
+#### [Slides: varya.me/design-and-develop-ui-2025/](https://varya.me/design-and-develop-ui-2025/)
 
 #### by Varya Stepanova
 
